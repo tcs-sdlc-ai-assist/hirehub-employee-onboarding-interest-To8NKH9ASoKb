@@ -1,0 +1,246 @@
+.interest-form-page {
+  min-height: 100vh;
+  padding: var(--space-2xl) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.interest-form-container {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.interest-form-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.interest-form-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.interest-form-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  margin-bottom: var(--space-xs);
+}
+
+.interest-form-subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+/* Success Banner */
+.interest-form-success {
+  background-color: var(--success-light);
+  color: var(--success-color);
+  border: 1px solid var(--success-border);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  animation: interest-form-success-fade-in var(--transition-slow) ease;
+}
+
+.interest-form-success.interest-form-success-dismiss {
+  animation: interest-form-success-fade-out var(--transition-slow) ease forwards;
+}
+
+@keyframes interest-form-success-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes interest-form-success-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* Error Banner */
+.interest-form-error-banner {
+  background-color: var(--error-light);
+  color: var(--error-color);
+  border: 1px solid var(--error-border);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+/* Form Fields */
+.interest-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.interest-form-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+}
+
+.interest-form-label-required {
+  color: var(--error-color);
+  margin-left: 2px;
+}
+
+.interest-form-input,
+.interest-form-select {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-base);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.interest-form-input:focus,
+.interest-form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.interest-form-input.interest-form-input-error,
+.interest-form-select.interest-form-input-error {
+  border-color: var(--error-color);
+}
+
+.interest-form-input.interest-form-input-error:focus,
+.interest-form-select.interest-form-input-error:focus {
+  box-shadow: 0 0 0 3px var(--error-light);
+}
+
+.interest-form-field-error {
+  font-size: var(--text-sm);
+  color: var(--error-color);
+  margin-top: 2px;
+}
+
+/* Submit Button */
+.interest-form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  border-color: var(--primary-color);
+  margin-top: var(--space-sm);
+}
+
+.interest-form-submit:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.interest-form-submit:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.interest-form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Back to Home Link */
+.interest-form-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.interest-form-back:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.interest-form-footer {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .interest-form-page {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .interest-form-card {
+    padding: var(--space-lg);
+  }
+
+  .interest-form-title {
+    font-size: var(--text-xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .interest-form-page {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .interest-form-card {
+    padding: var(--space-md);
+  }
+
+  .interest-form-input,
+  .interest-form-select {
+    width: 100%;
+    font-size: var(--text-base);
+  }
+
+  .interest-form-submit {
+    width: 100%;
+    padding: var(--space-md);
+  }
+
+  .interest-form-header {
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+}

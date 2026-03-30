@@ -1,0 +1,202 @@
+.admin-login-page {
+  min-height: 100vh;
+  padding: var(--space-2xl) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-login-container {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.admin-login-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-login-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  margin-bottom: var(--space-xs);
+}
+
+.admin-login-subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+/* Error Banner */
+.admin-login-error-banner {
+  background-color: var(--error-light);
+  color: var(--error-color);
+  border: 1px solid var(--error-border);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+/* Form Fields */
+.admin-login-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.admin-login-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+}
+
+.admin-login-label-required {
+  color: var(--error-color);
+  margin-left: 2px;
+}
+
+.admin-login-input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-base);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.admin-login-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.admin-login-input.admin-login-input-error {
+  border-color: var(--error-color);
+}
+
+.admin-login-input.admin-login-input-error:focus {
+  box-shadow: 0 0 0 3px var(--error-light);
+}
+
+.admin-login-field-error {
+  font-size: var(--text-sm);
+  color: var(--error-color);
+  margin-top: 2px;
+}
+
+/* Submit Button */
+.admin-login-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  border-color: var(--primary-color);
+  margin-top: var(--space-sm);
+}
+
+.admin-login-submit:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.admin-login-submit:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.admin-login-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Back to Home Link */
+.admin-login-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.admin-login-back:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.admin-login-footer {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-login-page {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .admin-login-card {
+    padding: var(--space-lg);
+  }
+
+  .admin-login-title {
+    font-size: var(--text-xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-login-page {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .admin-login-card {
+    padding: var(--space-md);
+  }
+
+  .admin-login-input {
+    width: 100%;
+    font-size: var(--text-base);
+  }
+
+  .admin-login-submit {
+    width: 100%;
+    padding: var(--space-md);
+  }
+
+  .admin-login-header {
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+}
